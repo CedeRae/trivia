@@ -12,24 +12,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <header>
-            <h1 id="main-header">Horror Movie Trivia</h1>
+            <div id="main-header">
+            <h1>Horror Movie Trivia</h1>
             <h2>Do you have what it takes to survive?</h2>
+            </div>
             <button id="start-button" type="button">Ready to Play?</button>
         </header>
-        <main>
+        <main id="swup" class="transition">
             
-           
+          
             <div id="quiz-board">
-                
-                <h2 id="question-text">Question Text</h2>
+                <h3 id="question-text">Question Text</h3>
                 <ul>
                     <li>
                         <button id="a_text" type="button">Answer</button>
@@ -44,12 +42,13 @@
                         <button id="d_text" type="button">Answer</button>
                     </li>
                 </ul>
-
             </div>
 
-            <div>
-            <h2 id="results"></h2>
-            <button id="play_again" type="button">Play Again?</button>
+            <div id="results-board">
+                <h3>Lets see how you did_</h3>
+                <br>
+                <h2 id="results"></h2>
+                <button id="play_again" type="button">Play Again?</button>
             </div>
 
         </main>

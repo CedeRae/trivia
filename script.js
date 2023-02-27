@@ -394,6 +394,7 @@ const triviaQuestions = [
 ];
 
 //access dom elements 
+const header = document.getElementById("main-header");
 const startButton = document.getElementById("start-button");
 const quizBoard = document.getElementById("quiz-board");
 const questionText = document.getElementById("question-text");
@@ -401,6 +402,7 @@ const a_text = document.getElementById("a_text");
 const b_text = document.getElementById("b_text");
 const c_text = document.getElementById("c_text");
 const d_text = document.getElementById("d_text");
+const resultsBoard = document.getElementById("results-board");
 const results = document.getElementById("results");
 const playAgain = document.getElementById('play_again');
 
@@ -414,10 +416,10 @@ startButton.addEventListener('click', displayContent, generateQuiz);
 
 //display quiz data
 function displayContent(){
+    header.style.display = "none";
     startButton.style.visibility = 'hidden';
-    quizBoard.style.visibility = 'visible';
-    playAgain.style.visibility = 'hidden';
-    //results.style.visibility = 'hidden';
+    quizBoard.style.display = 'block';
+    resultsBoard.style.display = 'none';
 };
 
 //call generateQuiz to get new 10 question quiz
@@ -428,12 +430,16 @@ playAgain.addEventListener('click', function onclick(){
     generateQuiz();
 });
 
+//display results after each question for testing
+function displayResults() {
+}
+
 //after round is complete print score and play again button
 function endRound() {
-    quizBoard.style.visibility = 'hidden';
-    results.style.visibility = 'visible';
+    quizBoard.style.display = 'none';
+    resultsBoard.style.display = 'block';
     results.innerHTML = `You Scored ${score}/10`;
-    playAgain.style.visibility = 'visible';
+    //playAgain.style.visibility = 'visible';
 };
 
 let score = 0;
@@ -452,8 +458,8 @@ function generateQuiz() {
     c_text.innerText = currentQuizData.c;
     d_text.innerText = currentQuizData.d;
 
-    //while current round isnt 10 increase score and current round else end round after question 10
-    if(currentRound !== 9) {
+    //while current round is not 9 increase score and current round else end round after question 10
+    if (currentRound != 9) {
         a_text.onclick = function() {
             if(currentQuizData.a === currentQuizData.answer) {
                 results.innerText = `Correct, ${currentQuizData.answer}`;
@@ -501,7 +507,7 @@ function generateQuiz() {
                 currentRound++
                 generateQuiz();
             }
-        }
+        };
     } else {
         a_text.onclick = function() {
             if(currentQuizData.a === currentQuizData.answer) {
@@ -543,5 +549,5 @@ function generateQuiz() {
                 endRound();
             }
         };
-    }
+    };
 };

@@ -1,107 +1,105 @@
 body {
-    background-image: url('scream.avif');
-    background-color: black;
-    background-size: 1000px;
-    background-repeat: no-repeat;
-    color: whitesmoke;
-    font-family: 'Permanent Marker', cursive;
-    margin: 0;
+    margin: 0 15px;
+    font-family: 'Space Mono', monospace;
+    background-color: rgb(37, 34, 34);
+    color: whitesmoke; 
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), 
+    -0.025em -.05em 0 rgba(0, 255, 0, 0.75), 
+    0.025em .05em 0 rgba(0, 0, 225, 0.75);
 }
-header{
-    display: inline-block;
-    background-color: rgb(104, 3, 3);
-    display: flex;
-    margin: 0px;
-}
-#main-header {
-   font-family: 'Creepster', cursive;
-   margin-left: 50px;
-}
-header h2 {
-    font-family: 'Xanh Mono', monospace;
-    margin-left: 30px;
-}
-#start-button {
-    width: 10rem;
-    visibility: visible; 
-    background-color: rgb(90, 88, 88);
-    margin-left: auto;
-    margin-top: 10px;
-    margin-right: 10px;
-    float: right;
-}
-button {
-    width: 40rem;
-    height: 4rem;
-    color: whitesmoke;
-    background-color:rgb(90, 88, 88);
-    font-family: 'Permanent Marker', cursive;
-    border-radius: 8px;
-}
-#quiz-board {
-    max-width: 800px;
-    height: 400px;
-    width: 900px;
-    visibility: hidden;
-    margin: 0 auto;
-}
-ul {
-    list-style: none;
-    margin: 0 auto;
-}
-li {
-    padding: 5px;
-}
-#play_again {
-    background-color: rgb(104, 3, 3);
-    visibility: hidden;
-    margin: 0 auto;
-}
-#results {
-    white-space: normal;
-    font-size: x-large;
-    margin: 0 auto;
 
+header {
+    text-align: center;
 }
-@media (max-width: 800px) {
-    body {
-        background-size: cover;
-        overflow: hidden;
-    }
-    
-    header {
-        display: block;
-        background: none;
-    }
-    header h2 {
-        color: rgb(175, 3, 3);
-    }
-    #start-button{
-        width: 10rem;
-        background-color: black;
-        border: solid;
-        border-color: whitesmoke;
-    }
-    button {
-        width: 20rem;
-    }
-    #quiz-board {
-        margin-left: 10%;
-    }
-    #question-text {
-        width: 50%;
-        max-width: 600px;
-        color: rgb(175, 3, 3);
-        font-size: x-large;
-    }
-    #results {
-        color:rgb(175, 3, 3);
-        margin-left: 10%;
-    }
-    #play_again {
-        background-color: black;
-        border: solid;
-        border-color: whitesmoke;
-        margin-left: 10%;
-    }
+
+h1 {
+    font-family: Creepster;
+    color: whitesmoke;
+    width: 100%;
+    font-size: 100px;
+    animation-name: colorSwap;
+    animation-delay: 2s;
+    animation-duration:6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes colorSwap {
+    0% {color: whitesmoke}
+    100% {color: rgb(183, 13, 13)}
+}
+
+h2 {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-delay: 4s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+
+
+#start-button, #play_again {
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: rgb(37, 34, 34);
+    border: hsl(0, 68%, 95%) 0.125em solid;
+    border-radius: 0.25em;
+    color: hsl(0, 68%, 95%);
+    padding: 1em 2em;
+    text-shadow: 0 0 0.125em;
+    box-shadow: inset 0 0 1em, 0 0 1em;
+
+    opacity: 0;
+    animation-name: btnappear;
+    animation-delay: 6s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btnappear {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+#quiz-board {
+    display: none;
+    color: white;
+    text-align: center;
+}
+
+#question-text {
+    opacity: 1;
+    font-size: 25px;
+    top: -100px;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+ul li {
+    list-style: none;
+    margin: 15px;
+}
+
+ul li button {
+    height: 70px;
+    width: 400px;
+    font-size: 20px;
+    font-family: 'Space Mono', monospace;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), 
+    -0.025em -.05em 0 rgba(0, 255, 0, 0.75), 
+    0.025em .05em 0 rgba(0, 0, 225, 0.75);
+    border-radius: 5px;
+}
+
+#results-board {
+    display: none;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }
