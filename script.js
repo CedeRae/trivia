@@ -418,7 +418,7 @@ startButton.addEventListener('click', displayContent, generateQuiz);
 function displayContent(){
     header.style.display = "none";
     startButton.style.visibility = 'hidden';
-    quizBoard.style.display = 'block';
+    quizBoard.style.display = 'flex';
     resultsBoard.style.display = 'none';
 };
 
