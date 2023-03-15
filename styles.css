@@ -19,7 +19,7 @@ h1 {
     font-size: 100px;
     animation-name: colorSwap;
     animation-delay: 2s;
-    animation-duration:6s;
+    animation-duration:4s;
     animation-fill-mode: forwards;
 }
 
@@ -36,7 +36,10 @@ h2 {
     animation-fill-mode: forwards;
 }
 
-
+@keyframes fadeIn {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
 
 #start-button, #play_again {
     font-size: 20px;
@@ -52,14 +55,20 @@ h2 {
 
     opacity: 0;
     animation-name: btnappear;
-    animation-delay: 6s;
-    animation-duration: 4s;
+    animation-delay: 5s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 
 @keyframes btnappear {
     0%{opacity: 0;}
     100%{opacity: 1;}
+}
+
+#start-button:hover,
+#play_again:hover {
+    box-shadow: inset 0 0 2em, 0 0 2em;
+    transition: .5s;
 }
 
 #quiz-board {
@@ -91,12 +100,21 @@ ul li button {
     border-radius: 5px;
 }
 
+#answer {
+    text-align: center;
+    margin: 10px;
+}
+
 #results-board {
     display: none;
     text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-@keyframes fadeIn {
-    0%{opacity: 0;}
-    100%{opacity: 1;}
+img {
+    margin-top: 40px;
+    height: 50%;
+    width: 50%;
 }
+

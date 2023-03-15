@@ -402,6 +402,7 @@ const a_text = document.getElementById("a_text");
 const b_text = document.getElementById("b_text");
 const c_text = document.getElementById("c_text");
 const d_text = document.getElementById("d_text");
+const answer = document.getElementById("answer");
 const resultsBoard = document.getElementById("results-board");
 const results = document.getElementById("results");
 const playAgain = document.getElementById('play_again');
@@ -436,10 +437,10 @@ function displayResults() {
 
 //after round is complete print score and play again button
 function endRound() {
+    answer.style.display = "none";
     quizBoard.style.display = 'none';
-    resultsBoard.style.display = 'block';
+    resultsBoard.style.display = 'flex';
     results.innerHTML = `You Scored ${score}/10`;
-    //playAgain.style.visibility = 'visible';
 };
 
 let score = 0;
@@ -448,7 +449,7 @@ let currentRound = 0;
 //get current quiz and print question/choice data
 generateQuiz()
 function generateQuiz() {
-    
+
     let currentQuiz = getCurrentQuiz();
     const currentQuizData = currentQuiz[currentRound];
 
@@ -462,48 +463,48 @@ function generateQuiz() {
     if (currentRound != 9) {
         a_text.onclick = function() {
             if(currentQuizData.a === currentQuizData.answer) {
-                results.innerText = `Correct, ${currentQuizData.answer}`;
+                answer.innerText = `Correct, ${currentQuizData.answer}`;
                 score++
                 currentRound++
                 generateQuiz();
             }else {
-                results.innerText = `Wrong, ${currentQuizData.answer}`;
+                answer.innerText = `Wrong, ${currentQuizData.answer}`;
                 currentRound++
                 generateQuiz();
             }
         };
         b_text.onclick = function() {
             if(currentQuizData.b === currentQuizData.answer) {
-                results.innerText = `Correct, ${currentQuizData.answer}`;
+                answer.innerText = `Correct, ${currentQuizData.answer}`;
                 score++
                 currentRound++
                 generateQuiz();
             }else {
-                results.innerText = `Wrong, ${currentQuizData.answer}`;
+                answer.innerText = `Wrong, ${currentQuizData.answer}`;
                 currentRound++
                 generateQuiz();
             }
         };
         c_text.onclick = function() {
             if(currentQuizData.c === currentQuizData.answer) {
-                results.innerText = `Correct, ${currentQuizData.answer}`;
+                answer.innerText = `Correct, ${currentQuizData.answer}`;
                 score++
                 currentRound++
                 generateQuiz();
             }else {
-                results.innerText = `Wrong, ${currentQuizData.answer}`;
+                answer.innerText = `Wrong, ${currentQuizData.answer}`;
                 currentRound++
                 generateQuiz();
             }
         };
         d_text.onclick = function() {
             if(currentQuizData.d === currentQuizData.answer) {
-                results.innerText = `Correct, ${currentQuizData.answer}`;
+                answer.innerText = `Correct, ${currentQuizData.answer}`;
                 score++
                 currentRound++
                 generateQuiz();
             }else {
-                results.innerText = `Wrong, ${currentQuizData.answer}`;
+                answer.innerText = `Wrong, ${currentQuizData.answer}`;
                 currentRound++
                 generateQuiz();
             }
@@ -511,41 +512,41 @@ function generateQuiz() {
     } else {
         a_text.onclick = function() {
             if(currentQuizData.a === currentQuizData.answer) {
-                results.innerText = `Correct, ${currentQuizData.answer}`
+                answer.innerText = `Correct, ${currentQuizData.answer}`;
                 score++
                 endRound();
             }else {
-                results.innerText = `Wrong, ${currentQuizData.answer}`;
+                answer.innerText = `Wrong, ${currentQuizData.answer}`;
                 endRound();
             }
         };
         b_text.onclick = function() {
             if(currentQuizData.b === currentQuizData.answer) {
-                results.innerText = `Correct, ${currentQuizData.answer}`;
+                answer.innerText = `Correct, ${currentQuizData.answer}`;
                 score++
                 endRound();
             }else {
-                results.innerText = `Wrong, ${currentQuizData.answer}`;
+                answer.innerText = `Wrong, ${currentQuizData.answer}`;
                 endRound();
             }
         };
         c_text.onclick = function() {
             if(currentQuizData.c === currentQuizData.answer) {
-                results.innerText = `Correct, ${currentQuizData.answer}`;
+                answer.innerText = `Correct, ${currentQuizData.answer}`
                 score++
                 endRound();
             }else {
-                quizBoard.innerText = `Wrong, ${currentQuizData.answer}`;
+                answer.innerText = `Wrong, ${currentQuizData.answer}`;
                 endRound();
             }
         };
         d_text.onclick = function() {
             if(currentQuizData.d === currentQuizData.answer) {
-                results.innerText = `Correct, ${currentQuizData.answer}`;
+                answer.innerText = `Correct, ${currentQuizData.answer}`;
                 score++
                 endRound();
             }else {
-                results.innerText = `Wrong, ${currentQuizData.answer}`;
+                answer.innerText = `Wrong, ${currentQuizData.answer}`;
                 endRound();
             }
         };
